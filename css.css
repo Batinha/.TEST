@@ -1,44 +1,90 @@
-body {
-    background-color: black;
+html {
+  background-color: black;
+}
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: #111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.1s ease-out;
+  z-index: 999;
+  transform: translateY(0);
 }
 
+
 #logo {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 24px;
-      color: #A259FF;
-      font-weight: 700;
-      letter-spacing: 10%;
-      position: fixed;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      top: 0;
-      margin-top: 35px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 24px;
+  color: #A259FF;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .menu {
-    color: #b883ff;
-    border: none;
-    background: none;
-    outline: none;
-    box-shadow: none;
-    padding: 0;
-    margin: 0;
-    position: fixed;
-    left: 30px;
-    top: 20.5px;
-    z-index: 1000;
+  color: #b883ff;
+  border: none;
+  background: none;
+  outline: none;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  left: 20px;
 }
 
 .carrinho {
-    color: #b883ff;
-    border: none;
-    background: none;
-    outline: none;
-    box-shadow: none;
-    padding: 0;
-    margin: 0;
-    position: fixed;
-    right: 30px;
-    top: 20.5px;
-    z-index: 1000;
+  color: #b883ff;
+  border: none;
+  background: none;
+  outline: none;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  right: 20px;
 }
+
+#carousel-container {
+  margin-top: 70px; /* abaixo do header */
+  overflow: hidden;
+  width: 100vw;
+  display: inline-flex;
+  justify-content: center;
+  margin-left: -9px; /* desloca tudo 5px à esquerda */
+  margin-top: 42px;
+}
+
+
+#a {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  gap: 10px;
+  padding: 10px 0;
+  scrollbar-width: none;
+}
+
+#a::-webkit-scrollbar {
+  display: none;
+}
+
+.bbb {
+  width: 380px;
+  height: 232.3px; /* proporcional a 360x220.09 */
+  flex-shrink: 0;
+  scroll-snap-align: start;
+  object-fit: cover;
+  border-radius: 0px;
+}
+
+
