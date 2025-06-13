@@ -87,4 +87,17 @@ html {
   border-radius: 0px;
 }
 
+#indic {
+  position: absolute;
+  color: #61349a;
+  top: 34%;
+  left: 40%;
+  transform: translateX(50%, 50%);
+  z-index: 1001;
+}
+
+.dot {
+  cursor: pointer;
+  transition: fill 0.3s ease;
+}
 

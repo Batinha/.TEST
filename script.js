@@ -58,3 +58,53 @@ function pauseAutoScroll() {
 });
 
 startAutoScroll();
+
+const carousel = document.getElementById('a');
+const images = carousel.querySelectorAll('.bbb');
+const dots = document.querySelectorAll('#indic .dot');
+
+function getActiveSlide() {
+  const scrollLeft = carousel.scrollLeft;
+  let closestIndex = 0;
+  let closestDistance = Infinity;
+
+  images.forEach((img, index) => {
+    const imgLeft = img.offsetLeft;
+    const distance = Math.abs(scrollLeft - imgLeft);
+
+    if (distance < closestDistance) {
+      closestDistance = distance;
+      closestIndex = index;
+    }
+  });
+
+  return closestIndex;
+}
+
+function updateIndicators() {
+  const activeIndex = getActiveSlide();
+
+  dots.forEach((dot, index) => {
+    if (index === activeIndex) {
+      dot.setAttribute('fill', '#A259FF'); // cor roxa ativa
+    } else {
+      dot.setAttribute('fill', '#61349A'); // cor cinza inativa
+    }
+  });
+}
+
+// Atualiza indicador ao rolar o carrossel
+carousel.addEventListener('scroll', updateIndicators);
+
+// Inicializa o indicador na carga da página
+updateIndicators();
+
+// Opcional: clique nas bolinhas para navegar no slide correspondente
+dots.forEach((dot, index) => {
+  dot.addEventListener('click', () => {
+    carousel.scrollTo({
+      left: images[index].offsetLeft,
+      behavior: 'smooth'
+    });
+  });
+});
