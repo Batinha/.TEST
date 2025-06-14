@@ -79,8 +79,8 @@ html {
 }
 
 .bbb {
-  width: 380px;
-  height: 232.3px; /* proporcional a 360x220.09 */
+  width: 100vw;
+  height: 30vh; /* proporcional a 360x220.09 */
   flex-shrink: 0;
   scroll-snap-align: start;
   object-fit: cover;
@@ -101,3 +101,35 @@ html {
   transition: fill 0.3s ease;
 }
 
+.lanc {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  color: #FFFFFF;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#lanc {
+  padding: 40px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80vw;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: -9px;
+}
+
+.c1 {
+  height: 140px;
+  width: 140px;
+  background-color: #070707;
+  position: absolute;
+  border-radius: 5px;
+  left: 0;
+  margin-left: 20px;
+}
